@@ -1,14 +1,13 @@
-/**
 /*
- Guia0104 - v0.0. - __ / __ / _____
+ Guia0105 - v0.0. - __ / __ / _____
  Author: ____________________
  Para compilar em uma janela de comandos (terminal):
 
- No Linux : g++ -o Guia0104 ./Guia0104.cpp
- No Windows: g++ -o Guia0104.exe Guia0104.cpp
+ No Linux : g++ -o Guia0105 ./Guia0105.cpp
+ No Windows: g++ -o Guia0105.exe Guia0105.cpp
  Para executar em uma janela de comandos (terminal):
- No Linux : ./Guia0104
- No Windows: Guia0104
+ No Linux : ./Guia0105
+ No Windows: Guia0105
 */
 // lista de dependencias
 #include "karel.hpp"
@@ -69,6 +68,7 @@ class MyRobot : public Robot
  doPartialTask( );
  pickBeeper( ); // apanhar marcador
  doPartialTask( );
+ putBeeper( ); // colocar marcador
  doPartialTask( );
  turnLeft( );
  // encerrar
@@ -87,11 +87,11 @@ int main ( )
 // antes de qualquer outra coisa
 // (depois de criado, podera' ser comentado)
  world->create ( "" ); // criar o mundo
- decorateWorld ( "Guia0104.txt" );
+ decorateWorld ( "Guia0105.txt" );
  world->show ( );
 // preparar o ambiente para uso
  world->reset ( ); // limpar configuracoes
- world->read ( "Guia0104.txt" );// ler configuracao atual para o ambiente
+ world->read ( "Guia0105.txt" );// ler configuracao atual para o ambiente
  world->show ( ); // mostrar a configuracao atual
  set_Speed ( 3 ); // definir velocidade padrao
 // criar robo
@@ -121,4 +121,5 @@ Versao Teste
  0.2 0.1 ( OK ) teste da tarefa
  0.3 0.1 ( OK ) teste da tarefa parcial
  0.4 0.1 ( OK ) teste do apanhar marcador
+ 0.5 0.1 ( OK ) teste do colocar marcador
 */
