@@ -87,8 +87,9 @@ public:
         } // end it
         doPartialTask();
         // testar se carrega marcador antes...
-        if (beepersInBag())
+        if (nbeepers() > 0)
         {
+            // ... de tentar descarrega-lo
             putBeeper(); // colocar marcador
         }                // end it
         doPartialTask();
@@ -147,4 +148,5 @@ Versao Teste
  0.6 01. ( OK ) teste da repeticao do movimento
  0.7 01. ( OK ) teste com marcador na posicao (4,4)
      02. ( OK ) teste sem marcador na posicao (4,4)
+ 0.8 01. ( OK ) teste como a quantidade de marcadores 
 */
