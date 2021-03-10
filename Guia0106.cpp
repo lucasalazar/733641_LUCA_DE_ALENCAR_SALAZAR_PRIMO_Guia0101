@@ -1,13 +1,13 @@
 /*
- Guia0106 - v0.0. - __ / __ / _____
- Author: ____________________
+ Guia_0106 - v0.0. - 08 / 03 / 2021
+ Author: LUCA DE ALENCAR SALAZAR PRIMO
  Para compilar em uma janela de comandos (terminal):
 
- No Linux : g++ -o Guia0106 ./Guia0106.cpp
- No Windows: g++ -o Guia0106.exe Guia0106.cpp
+ No Linux : g++ -o Guia0101 ./Guia0101.cpp
+ No Windows: g++ -o Guia0101.exe Guia0101.cpp
  Para executar em uma janela de comandos (terminal):
- No Linux : ./Guia0106
- No Windows: Guia0106
+ No Linux : ./Guia0101
+ No Windows: Guia0101
 */
 // lista de dependencias
 #include "karel.hpp"
