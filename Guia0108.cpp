@@ -1,5 +1,5 @@
 /*
- Guia0106 - v0.0. - __ / __ / _____
+ Guia0108 - v0.0. - __ / __ / _____
  Author: ____________________
  Para compilar em uma janela de comandos (terminal):
 
@@ -130,8 +130,8 @@ int main()
     getchar();
     return (0);
 } // end main ( )
-  // ------------------------------------------- testes
-  /*
+// ------------------------------------------- testes
+/*
 ---------------------------------------------- documentacao complementar
 ---------------------------------------------- notas / observacoes / comentarios
 ---------------------------------------------- previsao de testes

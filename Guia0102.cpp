@@ -17,12 +17,12 @@
  decorateWorld - Metodo para preparar o cenario.
  @param fileName - nome do arquivo para guardar a descricao.
 */
-void decorateWorld ( const char* fileName )
+void decorateWorld(const char *fileName)
 {
-// colocar um marcador no mundo
- world->set ( 4, 4, BEEPER );
-// salvar a configuracao atual do mundo
- world->save( fileName );
+    // colocar um marcador no mundo
+    world->set(4, 4, BEEPER);
+    // salvar a configuracao atual do mundo
+    world->save(fileName);
 } // decorateWorld ( )
 /**
  Classe para definir robo particular (MyRobot),
@@ -32,79 +32,79 @@ void decorateWorld ( const char* fileName )
 */
 class MyRobot : public Robot
 {
- public:
- /**
+public:
+    /**
  turnRight - Procedimento para virar 'a direita.
  */
- void turnRight ( )
- {
- // testar se o robo esta' ativo
- if ( checkStatus ( ) )
- {
- // o agente que executar esse metodo
- // devera' virar tres vezes 'a esquerda
- turnLeft ( );
- turnLeft ( );
- turnLeft ( );
- } // end if
- } // end turnRight ( )
- /**
+    void turnRight()
+    {
+        // testar se o robo esta' ativo
+        if (checkStatus())
+        {
+            // o agente que executar esse metodo
+            // devera' virar tres vezes 'a esquerda
+            turnLeft();
+            turnLeft();
+            turnLeft();
+        } // end if
+    }     // end turnRight ( )
+    /**
  doTask - Relacao de acoes para o robo executar.
  */
- void doTask ( )
- {
- // executar
- move( ); // andar
- move( );
- turnLeft( ); // virar 'a esquerda
- move( );
- move( );
- turnLeft( );
- move( );
- move( );
- turnLeft( );
- move( );
- move( );
- turnLeft( );
- turnLeft( );
- // encerrar
- turnOff ( ); // desligar-se
- } // end doTask ( )
-}; // end class MyRobot
+    void doTask()
+    {
+        // executar
+        move(); // andar
+        move();
+        turnLeft(); // virar 'a esquerda
+        move();
+        move();
+        turnLeft();
+        move();
+        move();
+        turnLeft();
+        move();
+        move();
+        turnLeft();
+        turnLeft();
+        // encerrar
+        turnOff(); // desligar-se
+    }              // end doTask ( )
+};                 // end class MyRobot
 // --------------------------- acao principal
 /**
  Acao principal: executar a tarefa descrita acima.
 */
-int main ( )
+int main()
 {
-// definir o contexto
-// criar o ambiente e decorar com objetos
-// OBS.: executar pelo menos uma vez,
-// antes de qualquer outra coisa
-// (depois de criado, podera' ser comentado)
- world->create ( "" ); // criar o mundo
- decorateWorld ( "Guia0102.txt" );
- world->show ( );
-// preparar o ambiente para uso
- world->reset ( ); // limpar configuracoes
- world->read ( "Guia0102.txt" );// ler configuracao atual para o ambiente
- world->show ( ); // mostrar a configuracao atual
- set_Speed ( 3 ); // definir velocidade padrao
-// criar robo
- MyRobot *robot = new MyRobot( );
-// posicionar robo no ambiente (situacao inicial):
-// posicao(x=1,y=1), voltado para direita, com zero marcadores, nome escolhido )
- robot->create ( 1, 1, EAST, 0, "Karel" );
-// executar tarefa
- robot->doTask ( );
-// encerrar operacoes no ambiente
- world->close ( );
-// encerrar programa
- getchar ( );
- return ( 0 );
+    // definir o contexto
+    // criar o ambiente e decorar com objetos
+    // OBS.: executar pelo menos uma vez,
+    // antes de qualquer outra coisa
+    // (depois de criado, podera' ser comentado)
+    world->create(""); // criar o mundo
+    decorateWorld("Guia0102.txt");
+    world->show();
+    // preparar o ambiente para uso
+    world->reset();              // limpar configuracoes
+    world->read("Guia0102.txt"); // ler configuracao atual para o ambiente
+    world->show();               // mostrar a configuracao atual
+    set_Speed(3);                // definir velocidade padrao
+                                 // criar robo
+    MyRobot *robot = new MyRobot();
+    // posicionar robo no ambiente (situacao inicial):
+    // posicao(x=1,y=1), voltado para direita, com zero marcadores, nome escolhido )
+    robot->create(1, 1, EAST, 0, "Karel");
+    // executar tarefa
+    robot->doTask();
+    // encerrar operacoes no ambiente
+    world->close();
+    // encerrar programa
+    getchar();
+    return (0);
 } // end main ( )
-// ------------------------------------------- testes
-/*
+  // ------------------------------------------- testes
+  /*
 ---------------------------------------------- documentacao complementar
 ---------------------------------------------- notas / observacoes / comentarios
 ---------------------------------------------- previsao de testes
