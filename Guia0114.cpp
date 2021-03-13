@@ -56,62 +56,44 @@ public:
     }
     void doTask()
     {
-        // se posicionar no primeiro ponto
-        moveN(2);
-        repeatN(2);
-        // testar se carrega marcador antes...
-        if (nextToABeeper())
-        {
-            //de tentar carrega-lo
+        // ir ao primeiro ponto
+        moveN(4);
+        turnLeft();
+        moveN(1);
+        // se estiver proximo de um beeper pegar ele
+        if(nextToABeeper()){
             pickBeeper();
-        } // end it
+        }
         // ir ao proximo ponto
+        turnLeft();
+        moveN(3);
         turnRight();
         moveN(3);
-        if (nextToABeeper())
-        {
-            //de tentar carrega-lo
+        // se estiver proximo de um beeper pegar ele
+        if(nextToABeeper()){
             pickBeeper();
-        } // end it
+        }
         // ir ao proximo ponto
-        repeatN(3);
-        if (nextToABeeper())
-        {
-            //de tentar carrega-lo
+        moveN(1);
+        turnRight();
+        moveN(3);
+        // se estiver proximo de um beeper pegar ele
+        if(nextToABeeper()){
             pickBeeper();
-        } // end it
+        }
+        //ir ao ponto de despache
+        move();
+        turnRight();
+        moveN(1);
+        turnRight();
+        move();
         turnLeft();
-        moveN(5);
-        turnLeft();
-        moveN(1);
-        // testar se carrega marcador antes...
-        if (nbeepers() > 0)
-        {
-            // ... de tentar descarrega-lo
-            putBeeper(); // colocar marcador
-        }                // end it
-        // ir ao proximo ponto
-        moveN(1);
-        // testar se carrega marcador antes...
-        if (nbeepers() > 0)
-        {
-            // ... de tentar descarrega-lo
-            putBeeper(); // colocar marcador
-        }                // end it
-        // ir ao proximo ponto
-        moveN(1);
-        // testar se carrega marcador antes...
-        if (nbeepers() > 0)
-        {
-            // ... de tentar descarrega-lo
-            putBeeper(); // colocar marcador
-        }                // end it
-        // voltar ao inicio
         moveN(2);
-        // virar para o leste
-        turnLeft();
-        // encerrar
-        turnOff();
+        while (nbeepers()>0)
+        {
+            putBeeper();
+        }
+        
     } // end doTask( )
 };
 
@@ -123,11 +105,11 @@ int main()
     // antes de qualquer outra coisa
     // (depois de criado, podera' ser comentado)
     world->create(""); // criar o mundo
-    decorateWorld("Guia0113.txt");
+    decorateWorld("Guia0114.txt");
     world->show();
     // preparar o ambiente para uso
     world->reset();              // limpar configuracoes
-    world->read("Guia0113.txt"); // ler configuracao atual para o ambiente
+    world->read("Guia0114.txt"); // ler configuracao atual para o ambiente
     world->show();               // mostrar a configuracao atual
     set_Speed(3);                // definir velocidade padrao
                                  // criar robo
