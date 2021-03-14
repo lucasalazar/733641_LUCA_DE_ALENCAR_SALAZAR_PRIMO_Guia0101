@@ -1,14 +1,6 @@
-/**
 /*
- Guia_0103 - v0.0. - 08 / 03 / 2021
  Author: LUCA DE ALENCAR SALAZAR PRIMO
- Para compilar em uma janela de comandos (terminal):
-
- No Linux : g++ -o Guia0101 ./Guia0101.cpp
- No Windows: g++ -o Guia0101.exe Guia0101.cpp
- Para executar em uma janela de comandos (terminal):
- No Linux : ./Guia0101
- No Windows: Guia0101
+ Matricula: 733641
 */
 // lista de dependencias
 #include "karel.hpp"

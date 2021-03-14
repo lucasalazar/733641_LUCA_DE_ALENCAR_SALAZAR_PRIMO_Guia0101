@@ -1,3 +1,8 @@
+/*
+ Author: LUCA DE ALENCAR SALAZAR PRIMO
+ Matricula: 733641
+*/
+// lista de dependencias
 #include "karel.hpp"
 
 void decorateWorld(const char *filename)
