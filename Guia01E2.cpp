@@ -18,9 +18,12 @@ void decorateWorld(const char *fileName)
     world->set(5, 4, VWALL);
     world->set(5, 5, VWALL);
     //beepers
-    world->set(5, 2, BEEPER);
-    world->set(5, 7, BEEPER);
-    world->set(2, 6, BEEPER);
+    world->set(5, 3, BEEPER);
+    world->set(5, 3, BEEPER);
+    world->set(5, 3, BEEPER);
+    world->set(5, 3, BEEPER);
+    world->set(5, 3, BEEPER);
+    world->set(5, 3, BEEPER);
     world->save(fileName);
 }
 
@@ -54,59 +57,73 @@ public:
             turnLeft();
         }
     }
+
+    void putNBeepers(int ns)
+    {
+        int n = 0;
+        if (nbeepers() > 0)
+        {
+            for (n = 0; n < ns; n++)
+            {
+                putBeeper();
+            }
+        }
+    }
+    void pickNBeepers(int ns)
+    {
+        int n = 0;
+        if (nextToABeeper())
+        {
+            for (n = 0; n < ns; n++)
+            {
+                pickBeeper();
+            }
+        }
+    }
+
     void doTask()
     {
         // ir ao primeiro ponto
+        moveN(5);
+        turnLeft();
+        moveN(5);
+        turnLeft();
+        move();
+        turnLeft();
+        moveN(3);
+        // se estiver proximo de um beeper pegar ele
+        pickNBeepers(6);
+        // ir ao primeiro ponto
+        turnLeft();
+        turnLeft();
+        moveN(3);
+        turnRight();
+        move();
+        turnLeft();
+        move();
+        turnLeft();
+        move();
+
+        // colocar os beepers no primero canto
+        putNBeepers(1);
+        // ir ao proximo ponto
+        moveN(3);
+        turnLeft();
+        move();
+        // colocar os beepers no segundo canto
+        putNBeepers(2);
+        //ir ao ultimo ponto
         moveN(4);
         turnLeft();
-        moveN(1);
-        // se estiver proximo de um beeper pegar ele
-        if (nextToABeeper())
-        {
-            pickBeeper();
-        }
-        // ir ao proximo ponto
-        turnLeft();
         moveN(3);
-        turnRight();
-        moveN(4);
-        // se estiver proximo de um beeper pegar ele
-        if (nextToABeeper())
-        {
-            pickBeeper();
-        }
-        // ir ao proximo ponto
-        moveN(1);
-        turnRight();
-        moveN(3);
-        // se estiver proximo de um beeper pegar ele
-        if (nextToABeeper())
-        {
-            pickBeeper();
-        }
-        //ir ao ponto de despache
-        moveN(1);
-        turnRight();
-        moveN(1);
-        turnRight();
-        moveN(1);
-        turnLeft();
-        moveN(3);
-        while (nbeepers() > 0)
-        {
-            putBeeper();
-        }
+        putNBeepers(3);
         // voltar ao inicio
         turnLeft();
         turnLeft();
-        moveN(3);
-        turnRight();
-        moveN(1);
-        turnRight();
-        moveN(5);
-        turnRight();
-        moveN(5);
+        moveN(4);
         turnLeft();
+        move();
+        // virar para o leste
         turnLeft();
     } // end doTask( )
 };
@@ -119,11 +136,11 @@ int main()
     // antes de qualquer outra coisa
     // (depois de criado, podera' ser comentado)
     world->create(""); // criar o mundo
-    decorateWorld("Guia0114.txt");
+    decorateWorld("Guia01E2.txt");
     world->show();
     // preparar o ambiente para uso
     world->reset();              // limpar configuracoes
-    world->read("Guia0114.txt"); // ler configuracao atual para o ambiente
+    world->read("Guia01E2.txt"); // ler configuracao atual para o ambiente
     world->show();               // mostrar a configuracao atual
     set_Speed(3);                // definir velocidade padrao
                                  // criar robo

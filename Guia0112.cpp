@@ -23,12 +23,6 @@ public:
         } //end if
 
     } // end moveN( )
-
-    void repeatN(int n)
-    {
-        turnLeft();
-        moveN(n);
-    }
     void turnRight()
     {
         if (checkStatus())
@@ -41,8 +35,10 @@ public:
     void doTask()
     {
         // se posicionar no primeiro ponto
-        moveN(2);
-        repeatN(2);
+        moveN(5);
+        turnLeft();
+        moveN(5);
+
         // testar se carrega marcador antes...
         if (nextToABeeper())
         {
@@ -50,24 +46,26 @@ public:
             pickBeeper();
         } // end it
         // ir ao proximo ponto
-        turnRight();
+        turnLeft();
+        turnLeft();
         moveN(3);
+        turnRight();
         if (nextToABeeper())
         {
             //de tentar carrega-lo
             pickBeeper();
         } // end it
         // ir ao proximo ponto
-        repeatN(3);
+        moveN(3);
         if (nextToABeeper())
         {
             //de tentar carrega-lo
             pickBeeper();
         } // end it
         //voltar ao inicio
-        repeatN(5);
-        repeatN(5);
-        //virar pro leste
+        moveN(2);
+        turnLeft();
+        moveN(2);
         turnLeft();
         // encerrar
         turnOff();
