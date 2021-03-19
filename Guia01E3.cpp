@@ -40,11 +40,11 @@ int main()
     // antes de qualquer outra coisa
     // (depois de criado, podera' ser comentado)
     world->create(""); // criar o mundo
-    decorateWorld("Guia01E2.txt");
+    decorateWorld("Guia01E3.txt");
     world->show();
     // preparar o ambiente para uso
     world->reset();              // limpar configuracoes
-    world->read("Guia01E2.txt"); // ler configuracao atual para o ambiente
+    world->read("Guia01E3.txt"); // ler configuracao atual para o ambiente
     world->show();               // mostrar a configuracao atual
     set_Speed(3);                // definir velocidade padrao
                                  // criar robo
